@@ -1,10 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../widgets/base_widget.dart';
 import '../widgets/color_widget.dart';
+
+import '../utils/hex_generator.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,21 +14,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Map<String, bool> colorPalette;
 
-  String generateRandomHexColor() {
-    Random random = new Random();
-    int length = 6;
-    String chars = '0123456789ABCDEF';
-    String hex = '#';
-    while (length-- > 0) hex += chars[(random.nextInt(16)) | 0];
-    return hex;
-  }
-
   @override
   void initState() {
     super.initState();
     colorPalette = Map();
     for (int i = 0; i < 5; i++) {
-      colorPalette[generateRandomHexColor()] = false;
+      colorPalette[HexGenerator.generateRandomHexColor()] = false;
     }
   }
 
@@ -81,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                   originalColorPalette.values.toList()[i] == true
                       ? colorPalette[originalColorPalette.keys.toList()[i]] =
                   true
-                      : colorPalette[generateRandomHexColor()] = false;
+                      : colorPalette[HexGenerator.generateRandomHexColor()] = false;
                 }
               });
             },
