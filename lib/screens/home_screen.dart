@@ -8,18 +8,19 @@ import '../utils/hex_generator.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   Map<String, bool> colorPalette;
+  HexGenerator hexGenerator = HexGenerator();
 
   @override
   void initState() {
     super.initState();
     colorPalette = Map();
     for (int i = 0; i < 5; i++) {
-      colorPalette[HexGenerator.generateRandomHexColor()] = false;
+      colorPalette[hexGenerator.generateRandomHexColor()] = false;
     }
   }
 
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context, sizingInformation) {
         return Scaffold(
           floatingActionButton: FloatingActionButton(
+            key: Key('refreshButton'),
             child: Icon(Icons.refresh),
             onPressed: () {
               setState(() {
@@ -72,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                   originalColorPalette.values.toList()[i] == true
                       ? colorPalette[originalColorPalette.keys.toList()[i]] =
                   true
-                      : colorPalette[HexGenerator.generateRandomHexColor()] = false;
+                      : colorPalette[hexGenerator.generateRandomHexColor()] = false;
                 }
               });
             },

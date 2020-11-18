@@ -59,6 +59,7 @@ class ColorWidget extends StatelessWidget {
                   child: FittedBox(
                     fit: BoxFit.contain,
                     child: InkWell(
+                      key: Key('lockButton'),
                       splashColor: Colors.grey,
                       child: locked
                           ? Padding(

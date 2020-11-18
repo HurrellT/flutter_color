@@ -1,7 +1,7 @@
 import 'dart:math';
 
 class HexGenerator {
-  static String generateRandomHexColor() {
+  String generateRandomHexColor() {
     Random random = new Random();
     int length = 6;
     String chars = '0123456789ABCDEF';
