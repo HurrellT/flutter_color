@@ -2,6 +2,8 @@
 
 A Flutter color palette generator
 
+## Check Flutter Color [HERE!](fluttercolor.surge.sh)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
