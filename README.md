@@ -2,7 +2,7 @@
 
 A Flutter color palette generator
 
-## Check Flutter Color [HERE!](fluttercolor.surge.sh)
+## Check Flutter Color [HERE!](https://fluttercolor.surge.sh)
 
 ## Getting Started
 
